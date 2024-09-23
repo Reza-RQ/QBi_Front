@@ -81,7 +81,7 @@
     function checkTelegramEnvironment() {
 
     
-        if(Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.query_id) 
+        if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initData)
         {
             Telegram.WebApp.ready();  // Let Telegram know the app is ready
             Telegram.WebApp.expand(); // Request full-screen mode
