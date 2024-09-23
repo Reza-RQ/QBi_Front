@@ -78,8 +78,9 @@
     console.log("Loading script started");
     console.log("Checking TelegramEnvironment");
     function checkTelegramEnvironment() {
-        if (Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
-            // The game is accessed through Telegram WebView, allow the rest of the page to load
+        if (Telegram.WebApp && Telegram.WebApp.initDataUnsafe && navigator.userAgent.includes("Telegram")) {
+            Telegram.WebApp.ready();  // Let Telegram know the app is ready
+            Telegram.WebApp.expand(); // Request full-screen mode
             return;
         } else {
             // Redirect to the Telegram bot URL if accessed from another browser
