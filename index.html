@@ -79,13 +79,13 @@
     console.log("Checking TelegramEnvironment");
 
     function checkTelegramEnvironment() {
-        if (typeof Telegram !== 'undefined' && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) 
+        if (navigator.userAgent.includes("Telegram"))
         {
             Telegram.WebApp.ready();  // Let Telegram know the app is ready
             Telegram.WebApp.expand(); // Request full-screen mode
             return;
         }
-        else 
+        else    
         {
             // Redirect to the Telegram bot URL if accessed from another browser
             window.location.href = "https://t.me/cubetto_coin_bot";
