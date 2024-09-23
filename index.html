@@ -80,9 +80,8 @@
 
     function checkTelegramEnvironment() {
 
-        const referrer = document.referrer;
     
-        if (referrer && referrer.includes("t.me"))
+        if (typeof Telegram !== 'undefined' && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
         {
             Telegram.WebApp.ready();  // Let Telegram know the app is ready
             Telegram.WebApp.expand(); // Request full-screen mode
