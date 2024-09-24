@@ -165,6 +165,9 @@
             console.log("Unity instance created");
             document.getElementById("loading-bar-container").style.display = "none"; // Hide loading bar when done
             document.getElementById("game-poster").style.display = "none"; // Hide game poster when done
+                      // Make the Unity instance globally accessible
+            window.unityInstance = unityInstance;  // Expose the unityInstance globally
+
         }).catch((message) => {
             console.error("Error creating Unity instance: " + message);
         });
