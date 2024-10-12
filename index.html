@@ -5,7 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Crypto | QBi</title>
-   
+    <script type="text/javascript">
+        // Ensure the Telegram WebApp API is loaded before trying to access it
+        window.Telegram.WebApp.onEvent('webAppReady', function() {
+            // Set the header color
+            Telegram.WebApp.setHeaderColor('bg_color', '#FF5733'); // Replace '#FF5733' with your desired color
+
+            // Set the bottom bar color
+            Telegram.WebApp.setBackgroundColor('#333'); // Replace '#333' with your desired color
+
+            Telegram.WebApp.setBottomBarColor('#4c1854'); // Replace '#333' with your desired color
+        });
+    </script>
     <style>
         /* Inline styles for debugging */
         body, html {
